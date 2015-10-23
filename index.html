@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <title>Visualizing Millennium Development Goals Indicators 2013</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+  <script src="eb.js" charset="utf-8"></script>
+  <meta name="description" content="WSD 2015 Data Visualization Challenge is interactive visualization of Millennium Development Goals Indicators using parallel coordinates and edge bundling.">
+  <meta name="keywords" content="Millennium Development Goals,visualization,parallel coordinates,edge bundling">
+  <meta name="author" content="Dominik Cygalski">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div id="screen-too-small">Sorry, unfortunately your screen size is too small to correctly display this page.</div>
+  <div id="top">
+    <h1>Visualizing Millennium Development Goals Indicators for 2013</h1>
+    <div id="links">
+      <h2 class="link" id="add-btn">Add/remove Indicators</h2>
+      <h2 class="link" id="about-btn">About</h2>
+    </div>
+  </div>
+  <div id="chart">
+    <div id="loading">Loading</div>
+    <div id="about">
+      <div>
+        <p>This is an entry for the <a href="https://unite.un.org/ideas/content/wsd2015-data-visualization-challenge" target="_blank">WSD 2015 Data Visualization Challenge</a>. It is an interactive visualization of the Millennium Development Goals Indicators for the year 2013.</p>
+
+        <p>On the challenge website, several questions were suggested that the visualization could help to answer. This project is inspired by the first one i.e. <i>What are the interlinkages, synergies and tradeoffs between different targets? For instance, does achieving certain targets increase or decrease the likelihood of achieving other targets?</i> The answer to this question could potentially be very complex as finding the causal relationships in the observational data is not an easy task. What this project does is simply trying to highlight correlations between different MDG indicators. The visualization is interactive and different MDG indicators can be added or removed from the plot by clicking <i>Add/remove Indicators</i> button in the top right-hand side corner.
+        </p>
+
+        <p><a href="https://en.wikipedia.org/wiki/Parallel_coordinates" target="_blank">Parallel coordinates</a> visualization technique is used here. It is a common and well-known way to present multidimensional data. It is suitable for finding correlations and spotting outliers. Moreover, the <a href="http://www.aviz.fr/wiki/uploads/Teaching2014/bundles_infovis.pdf" target="_blank">edge bundling</a> was used on top of the parallel coordinates plot. It is a technique which groups similar edges together to reduce visual clutter and allows to visually detect the most obvious patterns more easily and quickly.</p>
+
+        <p>Projects uses SVG graphics and was created with the help of <a href="http://d3js.org/" target="_blank">D3</a> library. <a href="http://bl.ocks.org/mbostock/1341021" target="_blank">D3 parallel coordinates </a> was used as a starting point and <a href="https://github.com/upphiminn/d3.ForceBundle" target="_blank">FDEB script</a> was used to perform force directed edge bundling. The code is open source and hosted on <a href="https://github.com/Domajno/WSD2015-Data-Visualization-Challenge" target="_blank">Github</a>. For the best experience use Chrome browser.</p>
+
+        <p>Data used in this project come from the official challenge website.</p>
+
+        <p>See more <a href="http://cygalski.pl" target="_blank">cygalski.pl</a>
+        </p>
+      </div>
+    </div>
+    <div id="add">
+      <div style="margin: 5vmin;">
+        <p>Choose the indicators which should appear on the plot:</p>
+        <ul></ul>
+      </div>
+      <div id="update-btn">
+        <span id="goback-btn">Go back</span>
+        <span id="update-chart-btn">Update chart</span>
+      </div>
+    </div>
+  </div>
+  <div id="text-wrapper"><span id="text"></span>
+  </div>
+  <script src="main.js" charset="utf-8"></script>
+</body>
+
+</html>
